@@ -1,0 +1,19 @@
+# save_model.py
+import torch
+import torch.nn as nn
+
+class SimpleASLModel(nn.Module):
+    def __init__(self, num_classes=26):
+        super(SimpleASLModel, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(21 * 2, 64),  # 21 hand landmarks * 2 (x, y)
+            nn.ReLU(),
+            nn.Linear(64, num_classes)
+        )
+
+    def forward(self, x):
+        return self.fc(x)
+
+model = SimpleASLModel()
+torch.save(model, "asl_model.pt")
