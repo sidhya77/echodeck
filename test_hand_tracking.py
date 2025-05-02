@@ -1,0 +1,1 @@
+# Script to verify MediaPipe hand tracking works

@@ -1,0 +1,8 @@
+torch
+torchvision
+opencv-python
+mediapipe==0.8.11
+pydub
+simpleaudio
+numpy
+Pillow
